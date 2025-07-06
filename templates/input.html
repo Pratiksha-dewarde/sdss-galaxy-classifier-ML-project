@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galaxy Classification 🌌</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px #000;
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #ffdd57;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffdd57;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffc107;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Galaxy Classifier 🌌</h2>
+        <form action="/predict" method="post">
+            <!-- Only 10 important features -->
+            <label for="f1">RA (Right Ascension):</label>
+            <input type="text" name="f1" required>
+
+            <label for="f2">DEC (Declination):</label>
+            <input type="text" name="f2" required>
+
+            <label for="f3">u-band magnitude:</label>
+            <input type="text" name="f3" required>
+
+            <label for="f4">g-band magnitude:</label>
+            <input type="text" name="f4" required>
+
+            <label for="f5">r-band magnitude:</label>
+            <input type="text" name="f5" required>
+
+            <label for="f6">PetroRad_r:</label>
+            <input type="text" name="f6" required>
+
+            <label for="f7">psfMag_u:</label>
+            <input type="text" name="f7" required>
+
+            <label for="f8">psfMag_r:</label>
+            <input type="text" name="f8" required>
+
+            <label for="f9">Redshift:</label>
+            <input type="text" name="f9" required>
+
+            <label for="f10">Redshift Error:</label>
+            <input type="text" name="f10" required>
+
+            <input type="submit" value="🔭 Predict Galaxy Type">
+        </form>
+        <p class="note">Only the first 10 important features are required. Others are auto-filled.</p>
+    </div>
+</body>
+</html>
